@@ -1,6 +1,6 @@
 '''
 SA1: Python file reading and Pickle
-SA2: Removing unwanted code
+SA2: Code Cleaning
 SA3: Test the model on different track
 '''
 import pygame,math
