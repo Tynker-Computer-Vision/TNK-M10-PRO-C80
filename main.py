@@ -11,7 +11,7 @@ from helpers import getSensorX, getSensorY
 
 config = neat.config.Config(neat.DefaultGenome, neat.DefaultReproduction,neat.DefaultSpeciesSet, neat.DefaultStagnation,'config-feedforward.txt')  
 
-# SA2 Load and store greatest fitness genome model
+# SA1 Load and store greatest fitness genome model
 with open('std1.pkl', 'rb') as f:
     genome = pickle.load(f)
     
@@ -31,21 +31,19 @@ yvel=3
 angle=0
 change=0
 
-# Creating a variable 'distance' and assigning value '5' to it
 distance=2
-# Creating a variable 'forward' and assigning 'False' to it
+
 forward=False
 
 font = pygame.font.Font('freesansbold.ttf', 12)
 
-# Defining a function 'newxy()' to calculate new x,y coordinates
-# New x,y coordinates are based on x,y coordinates, angle, distance 
+
 def newxy(x,y,distance,angle):
   angle=math.radians(angle+90)
+  
   xnew=x+(distance*math.cos(angle))
-  # Calculating the new y-coordinate value 'ynew'
   ynew=y-(distance*math.sin(angle))
-  # Returning 'xnew','ynew'
+
   return xnew,ynew
 
 def checkOutOfBounds(car):
